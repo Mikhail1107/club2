@@ -1,0 +1,39 @@
+{% extends 'base/base.html.twig' %}
+
+{% block main %}
+    <div class="bouton">
+        {# si un utilisateur est connecté en tant qu'admin #}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('messages') }}" class="organisateur-update" title="Afficher des messages">
+                Afficher des messages
+            </a>
+        {% endif %}
+    </div>
+    <div class="intro">
+        <p>Bienvenue au club de Hatha yoga!</p><br>
+        <p>
+            Hatha yoga signifie « yoga d'effort » et concerne principalement l'éveil spirituel par les postures correctes (āsana), la discipline du souffle (prāṇāyāma)1 et la méditation (dhyāna). Il constitue une pratique sous des formes diverses s'appuyant sur le travail corporel et l'attitude mentale correspondante et fait aussi l'objet d'un commerce dans le monde du développement personnel et du marché du bien-être.
+        </p><br>
+        <p> N'hésitez pas à nous appeler au : 06 00 00 00 00</p>
+    </div>
+    <h2 class="join">Gallerie</h2>
+     <article id="carouselExampleControls" class="carousel slide slide-card" data-ride="carousel">
+         <div class="carousel-inner slide-infos">
+            <div class="carousel-item active slide-image bg-img" style="background-image: url('{{ asset('assets/img/2018_Yoga.jpg') }}')">
+            </div>
+            <div class="carousel-item slide-image bg-img" style="background-image: url('{{ asset('assets/img/yoga.jpg') }}')">
+            </div>
+            <div class="carousel-item slide-image bg-img" style="background-image: url('{{ asset('assets/img/yoga-in-the-park.jpg') }}')">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+     </article>
+
+{% endblock %}

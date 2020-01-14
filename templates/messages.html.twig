@@ -1,0 +1,16 @@
+{% extends 'base/base.html.twig' %}
+
+{% block main %}
+    <div class="all-messages">
+        {% for message in messages %}
+
+            <div class="date">
+                <p>Reçu le: {{ message.publishedAt|date('d m Y') }}</p>
+                <h2 class="name">{{ message.firstname }} {{ message.lastname }} {{ message.email }} </h2>
+                <p>{{ message.ip }}</p>
+                <div class="message">{{ message.text }}</div>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}

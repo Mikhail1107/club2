@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}
+
+    <title>Club de Yoga</title>
+
+    {% endblock %}
+    {#pour menu burger#}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    {#pour afficher favicon#}
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo.png') }}">
+    {#jquery for carousel#}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    {#pour animer le texte#}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    {% include 'base/_header.html.twig' %}
+
+    <div class="flash-messages">
+        {% for messages in app.flashes %}
+        <div class="flash-message">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    {% block main %}
+
+    {% endblock %}
+
+</body>
+
+</html>
